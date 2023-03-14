@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms.VisualStyles;
+
 namespace BankDeposits
 {
     public partial class Authorization : Form
@@ -34,11 +36,18 @@ namespace BankDeposits
                             enterStatus = true;
                             personRole = connect.getRole(loginPasswordData[i]);
                             obj.ShowDialog();
-                            MessageBox.Show("Вы авторизовались под ролью: " + personRole, "Внимание");
-                            Menu menu = new Menu(personRole);
-                            this.Hide();
-                            menu.ShowDialog();
-                            this.Close();
+                            if(Captcha.status == true)
+                            {
+                                MessageBox.Show("Вы авторизовались под ролью: " + personRole, "Внимание");
+                                Menu menu = new Menu(personRole);
+                                this.Hide();
+                                menu.ShowDialog();
+                                this.Close();
+                            }else
+                            {
+                                loginInput.Text = "";
+                                passwordInput.Text = "";
+                            }
                         }
                     }
                 }

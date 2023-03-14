@@ -8,7 +8,7 @@ namespace BankDeposits
         public Menu(string role)
         {
             InitializeComponent();
-            personRole = role;  
+            personRole = "Ваша роль: " + role;  
         }
 
         private void Menu_Load(object sender, EventArgs e)

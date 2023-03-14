@@ -4,6 +4,7 @@ namespace BankDeposits
     public partial class Captcha : Form
     {
         private string text = String.Empty;
+        public static bool status = false;
         public Captcha()
         {
             InitializeComponent();
@@ -48,11 +49,13 @@ namespace BankDeposits
             if (userInput.Text == this.text)
             {
                 MessageBox.Show("Верно!");
+                status = true;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Ошибка!");
+                status = false;
             }               
         }
 
