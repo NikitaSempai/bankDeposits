@@ -31,3 +31,5 @@ D:\VS projects\BankDeposits\BankDeposits\obj\Debug\net6.0-windows\BankDeposits.D
 D:\VS projects\BankDeposits\BankDeposits\obj\Debug\net6.0-windows\BankDeposits.Interest_type.resources
 D:\VS projects\BankDeposits\BankDeposits\obj\Debug\net6.0-windows\BankDeposits.Person.resources
 D:\VS projects\BankDeposits\BankDeposits\obj\Debug\net6.0-windows\BankDeposits.Role.resources
+D:\VS projects\BankDeposits\BankDeposits\bin\Debug\net6.0-windows\FilterOfSearch.dll
+D:\VS projects\BankDeposits\BankDeposits\bin\Debug\net6.0-windows\FilterOfSearch.pdb

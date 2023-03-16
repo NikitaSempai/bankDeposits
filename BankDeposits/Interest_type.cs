@@ -26,13 +26,26 @@ namespace BankDeposits
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
-        {
-            printTable.deleteButton(interestTypeTable);
+        {            
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите удалить запись ?", "Внимание", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                printTable.deleteButton(interestTypeTable);
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             printTable.saveButton("Select * From Interest_Type", 4);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            printTable.searchButton(textBox1, textBox2, interestTypeTable);
         }
     }
 }

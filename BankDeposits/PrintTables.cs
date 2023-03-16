@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using FilterOfSearch;
 
 
 namespace BankDeposits
@@ -11,6 +12,7 @@ namespace BankDeposits
         private string connectionString = @"Data Source= NIKITA\SQLEXPRESS;Initial Catalog=Bank_deposits;Integrated Security=true";       
         private SqlCommandBuilder commandBuilder;
         private SqlDataAdapter adapter;
+        private static Search filter = new Search();
         private DataSet ds;
         private static Dictionary<int, string> tableName = new Dictionary<int, string>()
         {
@@ -31,7 +33,15 @@ namespace BankDeposits
             {5, "updatePerson"},
             {6, "updateRole"}
         };
-
+        /// <summary>
+        /// Инициализация
+        /// </summary>
+        /// <param name="dataGridView1">Объект для работы с данными на форме</param>
+        /// <param name="tableNumber">Номер текущей таблицы(сущности)</param>
+        /// <param name="personRole">Роль пользователя</param>
+        /// <param name="addButton">Кнопка "Добавить"</param>
+        /// <param name="deleteButton">Кнопка удалить</param>
+        /// <param name="saveButton">Кнопка сохранить</param>
         public void Init(DataGridView dataGridView1 , int tableNumber, string personRole, Button addButton , Button deleteButton, Button saveButton)
         {           
             switch (tableNumber)
@@ -73,7 +83,10 @@ namespace BankDeposits
                 dataGridView1.Columns[tableName[tableNumber] + "_ID"].ReadOnly = true;
             }
         }
-
+        /// <summary>
+        ///  кнопка "Вперед" на форме с таблицей
+        /// </summary>
+        /// <param name="tableNumber">Номер текущей таблицы(сущности)</param>
         public void forwardButton(int tableNumber)
         {
             if (ds.Tables[tableName[tableNumber]].Rows.Count < pageSize) return;
@@ -85,7 +98,10 @@ namespace BankDeposits
                 adapter.Fill(ds, tableName[tableNumber]);
             }
         }
-
+        /// <summary>
+        /// Кнопка "Назад" на форме с таблицей
+        /// </summary>
+        /// <param name="tableNumber">Номер текущей таблицы(сущности)</param>
         public void backButton(int tableNumber)
         {
             if (pageNumber == 0) return;
@@ -97,19 +113,28 @@ namespace BankDeposits
                 adapter.Fill(ds, tableName[tableNumber]);
             }
         }
-
+        /// <summary>
+        /// Запрос на получени данных из бд
+        /// </summary>
+        /// <param name="tableNumber">Номер текущей таблицы(сущности)</param>
+        /// <returns></returns>
         public string GetSql(int tableNumber)
         {
             return "SELECT * FROM " + tableName[tableNumber] + " ORDER BY " + tableName[tableNumber] + "_ID" + " OFFSET ((" + pageNumber + ") * " + pageSize + ") " +
                 "ROWS FETCH NEXT " + pageSize + "ROWS ONLY";
         }
-
+        /// <summary>
+        /// Кнопка "Добавить" запись на форме с таблицей
+        /// </summary>
         public void addButton()
         {
             DataRow row = ds.Tables[0].NewRow();
             ds.Tables[0].Rows.Add(row);
         }
-
+        /// <summary>
+        /// Кнопка "Удалить" запись
+        /// </summary>
+        /// <param name="dataGridView1">объект для работы с данными на форме</param>
         public void deleteButton(DataGridView dataGridView1)
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
@@ -117,7 +142,11 @@ namespace BankDeposits
                 dataGridView1.Rows.Remove(row);               
             }
         }
-
+        /// <summary>
+        /// Кнопка "Сохранения" изменений
+        /// </summary>
+        /// <param name="sql">Запрос на получение данных</param>
+        /// <param name="tableNumber">Номер текущей таблицы(сущности)</param>
         public void saveButton(string sql, int tableNumber)
         {
             try
@@ -189,6 +218,16 @@ namespace BankDeposits
             {
                 MessageBox.Show(ex.Message);
             }            
+        }
+        /// <summary>
+        /// Кнопка поиска данных
+        /// </summary>
+        /// <param name="firstText">Текст первого textBox</param>
+        /// <param name="secondText">Текст второго textBox</param>
+        /// <param name="accountTable">Таблица для поиска данных</param>
+        public void searchButton(TextBox firstText, TextBox secondText, DataGridView accountTable)
+        {
+            filter.searchButton(firstText, secondText, accountTable);
         }
     }
 }

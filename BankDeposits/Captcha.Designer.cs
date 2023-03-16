@@ -84,6 +84,7 @@
             this.Controls.Add(this.update);
             this.Controls.Add(this.userInput);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(333, 240);
             this.Name = "Captcha";
             this.Load += new System.EventHandler(this.Captcha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

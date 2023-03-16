@@ -116,6 +116,7 @@
             this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.loginInput);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(447, 425);
             this.Name = "Authorization";
             this.Load += new System.EventHandler(this.Authorization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

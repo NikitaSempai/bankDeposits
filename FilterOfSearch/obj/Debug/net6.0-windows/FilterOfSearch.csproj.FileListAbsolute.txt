@@ -1,0 +1,12 @@
+D:\VS projects\BankDeposits\FilterOfSearch\bin\Debug\net6.0-windows\FilterOfSearch.deps.json
+D:\VS projects\BankDeposits\FilterOfSearch\bin\Debug\net6.0-windows\FilterOfSearch.dll
+D:\VS projects\BankDeposits\FilterOfSearch\bin\Debug\net6.0-windows\FilterOfSearch.pdb
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.csproj.AssemblyReference.cache
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.AssemblyInfoInputs.cache
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.AssemblyInfo.cs
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.csproj.CoreCompileInputs.cache
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.dll
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\refint\FilterOfSearch.dll
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\FilterOfSearch.pdb
+D:\VS projects\BankDeposits\FilterOfSearch\obj\Debug\net6.0-windows\ref\FilterOfSearch.dll

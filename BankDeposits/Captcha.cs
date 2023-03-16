@@ -9,7 +9,12 @@ namespace BankDeposits
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Создание изображение
+        /// </summary>
+        /// <param name="Width">Ширина отрисованной капчи</param>
+        /// <param name="Height">Высота отрисованной капчи</param>
+        /// <returns></returns>
         private Bitmap CreateImage(int Width, int Height)
         {           
             Random rnd = new Random();

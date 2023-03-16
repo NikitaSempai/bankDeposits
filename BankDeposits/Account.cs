@@ -41,7 +41,19 @@ namespace BankDeposits
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            printTable.deleteButton(accountTable);
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите удалить запись ?", "Внимание", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                printTable.deleteButton(accountTable);
+            } else
+            {
+                return;
+            }          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            printTable.searchButton(textBox1, textBox2, accountTable);
         }
     }
 }

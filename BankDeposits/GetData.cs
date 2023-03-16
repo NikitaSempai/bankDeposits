@@ -8,7 +8,10 @@ namespace BankDeposits
         private const string connectionString = @"Data Source= NIKITA\SQLEXPRESS;Initial Catalog=Bank_deposits;Integrated Security=true";
         private List<string> loginPasswordData = new List<string>();
         private string roleName = "";
-
+        /// <summary>
+        /// Получить логины и пароли
+        /// </summary>
+        /// <returns>Возвращаем список логинов и паролей</returns>
         public List<string> getAllLoginsAndPassword()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,7 +33,11 @@ namespace BankDeposits
                 return loginPasswordData;
             }
         }
-        
+        /// <summary>
+        /// Получение роли пользователя
+        /// </summary>
+        /// <param name="number">Телефон пользователя</param>
+        /// <returns></returns>
         public string getRole(string number)
         {
             int roleId = 0;
